@@ -9,6 +9,7 @@ set(FILES   src/matrixMath.c
 
             src/vectorMath.c
 
+            src/VMMath.c
             src/matrixOpenGL.c
             )
 

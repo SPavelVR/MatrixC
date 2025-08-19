@@ -30,7 +30,7 @@ Matrix4 mat4_ortho(float width, float height, float line) {
 
 Matrix4 mat4_look_at(Vector3 eye, Vector3 center, Vector3 up) {
 
-    Matrix4 out = initEMatrix4(0.0f);
+    Matrix4 out = initEMatrix4(1.0f);
     
     Vector3 f = {
         center.arr[0] - eye.arr[0],

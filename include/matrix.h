@@ -65,6 +65,7 @@ typedef union
 #include "matrixTransform.h"
 
 #include "vectorMath.h"
+#include "VMMath.h"
 
 #include "matrixOpenGL.h"
 
