@@ -17,16 +17,13 @@ Matrix4 mat4_perspectiv(float fov, float aspect, float near, float far) {
     return out;
 };
 
-Matrix4 mat4_ortho(float left, float right, float bottom, float top, float near, float far) {
-    Matrix4 out = initMatrix4(0.0f);
+Matrix4 mat4_ortho(float width, float height, float line) {
+    Matrix4 out = initEMatrix4(1.0f);
     
-    out.arr[0][0] = 2.0f / (right - left);
-    out.arr[1][1] = 2.0f / (top - bottom);
-    out.arr[2][2] = -2.0f / (far - near);
-    
-    out.arr[3][0] = -(right + left) / (right - left);
-    out.arr[3][1] = -(top + bottom) / (top - bottom);
-    out.arr[3][2] = -(far + near) / (far - near);
+    out.arr[0][0] = 2.0f / width;
+    out.arr[1][1] = 2.0f / height;
+    out.arr[2][2] = -2.0f / line;
+    out.arr[2][3] = -1.0f;
 
     return out;
 }
