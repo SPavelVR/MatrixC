@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 4.0.0 FATAL_ERROR)
 
-project(matrixU VERSION 0.1 LANGUAGES C)
+project(matrixC VERSION 0.1 LANGUAGES C)
 
 
 set(FILES   src/matrixMath.c
