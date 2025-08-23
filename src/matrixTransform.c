@@ -8,7 +8,18 @@ float to_radians(float value)
     return M_PI * (value / 180.0f);
 }
 
-Matrix4 mat4_rotade(float radians, int space)
+float to_radiansPI(float value)
+{
+    while (value < 0.0f)
+        value += 360.0f;
+    
+    while (value >= 360.0f)
+        value -= 360.0f;
+    
+    return M_PI * (value / 180.0f);
+}
+
+Matrix4 mat4_rotate(float radians, int space)
 {
     Matrix4 out = initEMatrix4(1.0f);
     
@@ -51,9 +62,9 @@ Matrix4 mat4_translate(float x, float y, float z)
 {
     Matrix4 out = initEMatrix4(1.0f);
 
-    out.arr[3][0] = x;
-    out.arr[3][1] = y;
-    out.arr[3][2] = z;
+    out.arr[0][3] = x;
+    out.arr[1][3] = y;
+    out.arr[2][3] = z;
 
     return out;
 }
